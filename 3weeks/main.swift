@@ -23,6 +23,7 @@ print(type(of: requireTwoResult)) // 'Array<String>'
 let reqiureThreeResult = myMap([1, 2, 3, 4, 5]) {
     String($0)
 }
+
 print(reqiureThreeResult) // '["1", "2", "3", "4", "5"]'
 
 // 필수 3-1
