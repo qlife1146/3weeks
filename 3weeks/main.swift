@@ -7,5 +7,5 @@
 
 import Foundation
 
-print("Hello, World!")
-
+//필수1
+caculate(closure: sum)
