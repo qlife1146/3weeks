@@ -43,3 +43,27 @@ func b(arr: [String]) -> [String] {
     }
     return result
 }
+
+func c<T>(_ arr: [T]) -> [T] {
+    let arr = arr
+    var result: [T] = []
+
+    for i in 0 ..< arr.count {
+        if i == 0 || i % 2 == 0 {
+            result.append(arr[i])
+        }
+    }
+    return result
+}
+
+func d<T: Numeric>(_ arr: [T]) -> [T] {
+    let arr = arr
+    var result: [T] = []
+
+    for i in 0 ..< arr.count {
+        if i == 0 || i % 2 == 0 {
+            result.append(arr[i])
+        }
+    }
+    return result
+}

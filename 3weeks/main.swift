@@ -23,5 +23,19 @@ print(type(of: requireTwoResult)) // 'Array<String>'
 let reqiureThreeResult = myMap([1, 2, 3, 4, 5]) {
     String($0)
 }
-
 print(reqiureThreeResult) // '["1", "2", "3", "4", "5"]'
+
+// 필수 3-1
+print(a(arr: [1, 2, 3, 4, 5])) // '[1, 3, 5]'
+
+// 필수 3-2
+print(b(arr: ["가", "나", "다", "라", "마"])) // '["가", "다", "마"]'
+
+// 필수 3-3-a
+print(c([1, 2, 3, 4, 5])) // '[1, 3, 5]'
+
+// 필수 3-3-b
+print(c(["가", "나", "다", "라", "마"])) // '["가", "다", "마"]'
+
+print("\(d([1, 2, 3, 4, 5]))") // '[1, 3, 5]'
+// print("d: \(d("가", "나", "다", "라", "마"))")
