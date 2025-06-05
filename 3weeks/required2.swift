@@ -40,7 +40,6 @@ let requireTwoNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 var requireTwoFilter = requireTwoNumbers.filter { $0 % 2 == 0 }
 
 func myMap(_ array: [Int], _ result: (Int) -> String) -> [String] {
-    let array = array
     var resultArray: [String] = []
     for i in array {
         resultArray.append(String(i))

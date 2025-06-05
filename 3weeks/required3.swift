@@ -23,47 +23,25 @@ import Foundation
 //    - 파라미터의 타입을 << 'Numeric 프로토콜'을 준수하는 타입의 요소를 가진 배열 >> 로 변경합니다.
 
 func a(arr: [Int]) -> [Int] {
-    let arr = arr
-    var result: [Int] = []
-    for i in 0 ..< arr.count {
-        if i == 0 || i % 2 == 0 {
-            result.append(arr[i])
-        }
-    }
-    return result
+    return arr.enumerated()
+        .filter { $0.offset % 2 == 0 }
+        .map { $0.element }
 }
 
 func b(arr: [String]) -> [String] {
-    let arr = arr
-    var result: [String] = []
-    for i in 0 ..< arr.count {
-        if i == 0 || i % 2 == 0 {
-            result.append(arr[i])
-        }
-    }
-    return result
+    return arr.enumerated()
+        .filter { $0.offset % 2 == 0 }
+        .map { $0.element }
 }
 
 func c<T>(_ arr: [T]) -> [T] {
-    let arr = arr
-    var result: [T] = []
-
-    for i in 0 ..< arr.count {
-        if i == 0 || i % 2 == 0 {
-            result.append(arr[i])
-        }
-    }
-    return result
+    return arr.enumerated()
+        .filter { $0.offset % 2 == 0 }
+        .map { $0.element }
 }
 
 func d<T: Numeric>(_ arr: [T]) -> [T] {
-    let arr = arr
-    var result: [T] = []
-
-    for i in 0 ..< arr.count {
-        if i == 0 || i % 2 == 0 {
-            result.append(arr[i])
-        }
-    }
-    return result
+    return arr.enumerated()
+        .filter { $0.offset % 2 == 0 }
+        .map { $0.element }
 }
