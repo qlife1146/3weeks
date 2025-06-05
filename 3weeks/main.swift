@@ -26,20 +26,27 @@ let reqiureThreeResult = myMap([1, 2, 3, 4, 5]) {
 
 print(reqiureThreeResult) // '["1", "2", "3", "4", "5"]'
 
-// 필수 3-1
+// 필수 3-a
 print(a(arr: [1, 2, 3, 4, 5])) // '[1, 3, 5]'
 
-// 필수 3-2
+// 필수 3-b
 print(b(arr: ["가", "나", "다", "라", "마"])) // '["가", "다", "마"]'
 
-// 필수 3-3-a
+// 필수 3-c
 print(c([1, 2, 3, 4, 5])) // '[1, 3, 5]'
-
-// 필수 3-3-b
 print(c(["가", "나", "다", "라", "마"])) // '["가", "다", "마"]'
 
+// 필수 3-d
 print("\(d([1, 2, 3, 4, 5]))") // '[1, 3, 5]'
-// print("d: \(d("가", "나", "다", "라", "마"))")
+//print("\(d["가", "나", "다", "라", "마"])") // only numeric
 
+// 필수 4
 robotCall() // 기본 이름: 피규어 / 변경: 피규어 -> 옵티머스 -> 옵티머스
-skillPrint()
+skillPrint() // 고유 메소드 호출
+
+// 필수 5
+deliveryDay(for: "", status: DeliveryStatus.inTransit(daysRemaining: 30))
+deliveryDay(for: "dsas", status: DeliveryStatus.inTransit(daysRemaining: 30))
+deliveryDay(for: "djqwipdwq", status: DeliveryStatus.error)
+deliveryDay(for: "dsa", status: DeliveryStatus.notStarted)
+
