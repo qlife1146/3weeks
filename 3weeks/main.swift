@@ -54,3 +54,17 @@ deliveryDay(for: "dsa", status: DeliveryStatus.notStarted)
 var box = SortableBox(items: [3, 1, 4, 2])
 box.sortItems()
 print(box.items)
+
+// 도전 4
+var a: A? = A()
+var b: B? = B()
+
+a?.b = b
+b?.a = a
+b?.closure = { [weak a] in
+    print("\(a!)")
+}
+b?.closure?()
+
+a = nil
+b = nil
