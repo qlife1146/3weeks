@@ -50,6 +50,10 @@ deliveryDay(for: "dsas", status: DeliveryStatus.inTransit(daysRemaining: 30))
 deliveryDay(for: "djqwipdwq", status: DeliveryStatus.error)
 deliveryDay(for: "dsa", status: DeliveryStatus.notStarted)
 
+// 도전 1
+let hybridCar = HybridCar(brand: "TOYOTA", model: "PRIDE", year: "2025", engine: HydrogenEngine())
+hybridCar.switchEngine(to: ElectricEngine())
+
 // 도전 2
 var box = SortableBox(items: [3, 1, 4, 2])
 box.sortItems()
@@ -59,8 +63,8 @@ print(box.items)
 var a: A? = A()
 var b: B? = B()
 
-a?.b = b
-b?.a = a
+//a?.b = b
+//b?.a = a
 b?.closure = { [weak a] in
     print("\(a!)")
 }

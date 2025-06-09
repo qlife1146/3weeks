@@ -6,7 +6,8 @@
 //
 
 import Foundation
-//- ‘자동차’ 라는 개념을 가지고 객체 지향 설계를 해봅니다.
+
+// - ‘자동차’ 라는 개념을 가지고 객체 지향 설계를 해봅니다.
 //    - [ ]  Base Class `Car` 를 설계해주세요.
 //        - 4가지의 상태를 정의해주세요.
 //            - 브랜드, 모델, 연식
@@ -29,25 +30,25 @@ import Foundation
 //    - [ ]  상속을 사용하여 기능을 추가하는 것과, 프로토콜 채택을 통해서 기능을 추가하는 것의 장단점, 차이를 고민하고 주석으로 서술해주세요.
 
 class Engine {
-    private var startUp: Bool
-    
-    func start () -> String {
-        startUp = true
+    func start() -> String {
         return "시동 ON"
     }
-    
-    func stop () -> String {
-        startUp = false
+
+    func stop() -> String {
         return "시동 OFF"
-    }
-    
-    init(engineStatus: Bool) {
-        self.startUp = engineStatus
     }
 }
 
 class ElectricEngine: Engine {
-    
+    func charge() -> String {
+        return "배터리 충전 중..."
+    }
+}
+
+class HydrogenEngine: Engine {
+    func refuel() -> String {
+        return "연료 주입 중..."
+    }
 }
 
 class Car {
@@ -55,34 +56,29 @@ class Car {
     var model: String
     var engine: Engine
     private var year: String
-    private var hazard: Bool
-    private var fuelAmount: Int
-    
+
     enum Blinker {
         case left
         case right
         case off
     }
-    
+
     private func drive() -> String {
         return "Car 주행 중..."
     }
-    
-    private func hazardLightToggle() -> String {
-        hazard.toggle()
-        return "hazard light is \(hazard ? "on" : "off")"
-    }
-    
-    init(brand: String, model: String, year: String, engine: Engine, hazard: Bool, fuelAmount: Int) {
+
+    init(brand: String, model: String, year: String, engine: Engine) {
         self.brand = brand
         self.model = model
         self.year = year
         self.engine = engine
-        self.hazard = hazard
-        self.fuelAmount = fuelAmount
     }
 }
 
-class ElectricCar: ElectricEngine {
-    // 아 모르겠다.
+class ElectricCar: Car {}
+
+class HybridCar: Car {
+    func switchEngine(to engine: Engine) {
+        self.engine = engine
+    }
 }
