@@ -38,7 +38,7 @@ print(c(["가", "나", "다", "라", "마"])) // '["가", "다", "마"]'
 
 // 필수 3-d
 print("\(d([1, 2, 3, 4, 5]))") // '[1, 3, 5]'
-//print("\(d["가", "나", "다", "라", "마"])") // only numeric
+// print("\(d["가", "나", "다", "라", "마"])") // only numeric
 
 // 필수 4
 robotCall() // 기본 이름: 피규어 / 변경: 피규어 -> 옵티머스 -> 옵티머스
@@ -50,3 +50,25 @@ deliveryDay(for: "dsas", status: DeliveryStatus.inTransit(daysRemaining: 30))
 deliveryDay(for: "djqwipdwq", status: DeliveryStatus.error)
 deliveryDay(for: "dsa", status: DeliveryStatus.notStarted)
 
+// 도전 1
+let hybridCar = HybridCar(brand: "TOYOTA", model: "PRIDE", year: "2025", engine: HydrogenEngine())
+hybridCar.switchEngine(to: ElectricEngine())
+
+// 도전 2
+var box = SortableBox(items: [3, 1, 4, 2])
+box.sortItems()
+print(box.items)
+
+// 도전 4
+var a: A? = A()
+var b: B? = B()
+
+//a?.b = b
+//b?.a = a
+b?.closure = { [weak a] in
+    print("\(a!)")
+}
+b?.closure?()
+
+a = nil
+b = nil
