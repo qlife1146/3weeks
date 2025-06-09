@@ -34,6 +34,12 @@ protocol Introducible {
     func introduce() -> String // print("안녕하세요, 저는 \(name)입니다.")
 }
 
+extension Introducible {
+    func introduce() -> String {
+        return "안녕하세요, 저는 \(name)입니다."
+    }
+}
+
 struct Robot: Introducible {
     // 프로퍼티 옵저버
     var name: String {
@@ -47,7 +53,7 @@ struct Robot: Introducible {
     }
 
     func introduce() -> String {
-        return "안녕하세요, 저는 \(name)입니다."
+        return "Hello, I'm \(name)."
     }
 
     func batteryCharge() -> String {
@@ -58,9 +64,9 @@ struct Robot: Introducible {
 struct Cat: Introducible {
     var name: String
 
-    func introduce() -> String {
-        return "안녕하세요, 저는 \(name)입니다."
-    }
+//    func introduce() -> String {
+//        return "안녕하세요, 저는 \(name)입니다."
+//    }
 
     func purr() -> String {
         return "그르릉"
@@ -74,9 +80,9 @@ struct Cat: Introducible {
 struct Dog: Introducible {
     var name: String
 
-    func introduce() -> String {
-        return "안녕하세요, 저는 \(name)입니다."
-    }
+//    func introduce() -> String {
+//        return "안녕하세요, 저는 \(name)입니다."
+//    }
 
     func bark() -> String {
         return "댕댕"
